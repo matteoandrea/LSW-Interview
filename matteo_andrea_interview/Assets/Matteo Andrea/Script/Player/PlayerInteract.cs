@@ -8,7 +8,8 @@ public class PlayerInteract
 {
     [SerializeField] private InputReader _input;
     [SerializeField] private PlayerControl _playerControl;
-    [SerializeField] public IInteractable currentInteract;
+    public IInteractable LookInteract;
+    public IInteractable currentInteract;
     private Camera _cam;
 
     public void Awake()
@@ -21,7 +22,7 @@ public class PlayerInteract
         FindinteractTarget(mousePos);
     }
 
-    private void ChangeSeleted(IInteractable interactable) => currentInteract = interactable;
+    private void ChangeSeleted(IInteractable interactable) => LookInteract = interactable;
 
     public RaycastHit2D GetHit(Vector2 mousePos)
     {
@@ -44,15 +45,15 @@ public class PlayerInteract
             if (interactable != null)
             {
 
-                if (interactable == currentInteract) return;
+                if (interactable == LookInteract) return;
 
-                else if (currentInteract != null)
+                else if (LookInteract != null)
                 {
-                    currentInteract?.Exit();
+                    LookInteract?.Exit();
 
                     ChangeSeleted(interactable);
 
-                    currentInteract?.Enter();
+                    LookInteract?.Enter();
 
                     return;
                 }
@@ -60,16 +61,16 @@ public class PlayerInteract
                 {
                     ChangeSeleted(interactable);
 
-                    currentInteract?.Enter();
+                    LookInteract?.Enter();
 
                     return;
                 }
             }
             else
             {
-                if (currentInteract == null) return;
+                if (LookInteract == null) return;
 
-                currentInteract?.Exit();
+                LookInteract?.Exit();
 
                 ChangeSeleted(null);
 
@@ -78,9 +79,9 @@ public class PlayerInteract
         }
         else
         {
-            if (currentInteract == null) return;
+            if (LookInteract == null) return;
 
-            currentInteract?.Exit();
+            LookInteract?.Exit();
             ChangeSeleted(null);
 
             return;
