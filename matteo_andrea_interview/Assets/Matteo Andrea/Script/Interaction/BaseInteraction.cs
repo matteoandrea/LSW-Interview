@@ -3,27 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TesteInteract : MonoBehaviour, IInteractable
+public class BaseInteraction : MonoBehaviour, IInteractable
 {
     [SerializeField] private Transform _location;
     public Transform targetLocaction
     {
-        get {return _location; }
+        get { return _location; }
     }
     [SerializeField] private UnityEvent OnInteractEvent;
 
-    public void Enter()
+    public virtual void Enter()
     {
     }
 
-    public void Exit()
+    public virtual void Exit()
     {
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
         OnInteractEvent.Invoke();
     }
-
-
 }
