@@ -17,7 +17,6 @@ public class PlayerIdleAct : Action
 
     public override void ActEnter(StateMachine stateMachine)
     {
-
         _animations.SetBool(_animations.isMoving, false);
     }
 }

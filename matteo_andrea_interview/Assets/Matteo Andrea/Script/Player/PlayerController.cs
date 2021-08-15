@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Space(10)]
 
-    [SerializeField] private PlayerInteract _playerInteract;
+    [SerializeField] public PlayerInteract playerInteract;
 
     [Space(20)]
 
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         _cam = Camera.main;
 
-        _playerInteract.Awake();
+        playerInteract.Awake();
     }
 
     private void OnEnable()
@@ -48,18 +48,22 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        _playerInteract.Update(_mousePos);
+        playerInteract.Update(_mousePos);
     }
 
     private void PressedMouse()
     {
-        if (_playerInteract.currentInteract != null && _playerControl.canInteract)
-            _playerInteract.currentInteract.Interact();
-
+        if (playerInteract.LookInteract != null && _playerControl.canInteract)
+        {
+            playerInteract.currentInteract = playerInteract.LookInteract;
+            var target = playerInteract.currentInteract.targetLocaction;
+            _playerMovement.Move(target.position);
+        }
         else
         {
             var target = _cam.ScreenToWorldPoint(_mousePos);
             _playerMovement.Move(target);
+            playerInteract.currentInteract = null;
         }
     }
 

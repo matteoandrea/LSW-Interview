@@ -13,12 +13,14 @@ public class PlayerMoveAct : Action
 
     private NavMeshAgent _agent;
     private PlayerAnimations _animations;
+    private PlayerInteract _interact;
 
     public override void ActAwake(StateMachine stateMachine)
     {
         var stateData = stateMachine.StateData;
         stateData.GetData<NavMeshAgent>(_keys.navAgent, out _agent);
         stateData.GetData<PlayerAnimations>(_keys.animations, out _animations);
+        stateData.GetData<PlayerInteract>(_keys.interact, out _interact);
     }
 
     public override void ActEnter(StateMachine stateMachine)
@@ -31,7 +33,11 @@ public class PlayerMoveAct : Action
         ControlAnimation();
 
         if (_agent.remainingDistance <= _agent.stoppingDistance + pathEndThreshold)
+        {
             _control.isMoving = false;
+
+            if (_interact.currentInteract != null) _interact.currentInteract.Interact();
+        }
     }
 
     private void ControlAnimation()
@@ -40,7 +46,7 @@ public class PlayerMoveAct : Action
             _animations.SetInt(_animations.direction, 1);
 
         else if (_agent.velocity.y < -.5f)
-            _animations.SetInt(_animations.direction,0);
+            _animations.SetInt(_animations.direction, 0);
 
         else if (_agent.velocity.x > .2f)
             _animations.SetInt(_animations.direction, 2);
