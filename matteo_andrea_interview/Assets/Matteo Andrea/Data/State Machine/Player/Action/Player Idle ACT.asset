@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39a68070d8601042a09631b4b866bd4, type: 3}
   m_Name: Player Idle ACT
   m_EditorClassIdentifier: 
-  _keys: {fileID: 0}
+  _keys: {fileID: 11400000, guid: cdd55ce760c24e049b589ee41c8d29b8, type: 2}
