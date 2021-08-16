@@ -15,3 +15,4 @@ MonoBehaviour:
   _keys: {fileID: 11400000, guid: cdd55ce760c24e049b589ee41c8d29b8, type: 2}
   _control: {fileID: 11400000, guid: e8c0cfa702ca01445bf8ed32fd767187, type: 2}
   pathEndThreshold: 0.1
+  _clip: {fileID: 8300000, guid: 3accd8a134780c7458d6eac75f63afb3, type: 3}
