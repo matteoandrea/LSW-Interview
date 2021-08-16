@@ -6,5 +6,5 @@
 
 ## Build:
 
-[Game build for windows.](\lsw_build\Matteo_Andrea_LSW_Interview.pdf)
+[Game build for windows.](\lsw_build\matteo_andrea_interview.exe)
 
