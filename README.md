@@ -2,9 +2,9 @@
 
 ## Explanation:
 
-[Pdf with explanations.](\Doc\Matteo_Andrea_LSW_Interview.pdf)
+[Pdf with explanations.](https://github.com/matteoandrea/LSW-Interview/blob/main/Doc/Matteo_Andrea_LSW_Interview.pdf)
 
 ## Build:
 
-[Game build for windows.](\lsw_build\matteo_andrea_interview.exe)
+[Game build for windows.](https://github.com/matteoandrea/LSW-Interview/tree/main/lsw_build)
 
