@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     [Space(20)]
 
+    [SerializeField] public PlayerCloth playerCloth;
+
     private Camera _cam;
     private Vector2 _mousePos;
 
@@ -32,12 +34,16 @@ public class PlayerController : MonoBehaviour
     {
         _input.MoveEvent += SetMousePos;
         _input.ClickEvent += PressedMouse;
+
+        playerCloth.OnEnable();
     }
 
     private void OnDisable()
     {
         _input.MoveEvent -= SetMousePos;
         _input.ClickEvent -= PressedMouse;
+
+        playerCloth.OnDisable();
     }
 
     private void Start()

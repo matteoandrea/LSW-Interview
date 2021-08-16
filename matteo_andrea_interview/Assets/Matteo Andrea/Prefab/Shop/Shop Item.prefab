@@ -195,7 +195,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1198208468470242478}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8756273412124778807}
+        m_TargetAssemblyTypeName: UseItemUI, Script
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6323129674827319799
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +429,7 @@ GameObject:
   - component: {fileID: 7178402560868808620}
   - component: {fileID: 7178402560868808621}
   - component: {fileID: 7178402560868808622}
-  - component: {fileID: 1067128723655397547}
+  - component: {fileID: 8756273412124778807}
   m_Layer: 5
   m_Name: Shop Item
   m_TagString: Untagged
@@ -513,7 +525,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &1067128723655397547
+--- !u!114 &8756273412124778807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -522,14 +534,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7178402560868808608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed9db945304128548b78069af162e5bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f82ac549bfb792459b8509e9c38699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCurrency: {fileID: 11400000, guid: 92d48b92c91c2d64197c538d8b56eb9b, type: 2}
+  shopItem: {fileID: 11400000, guid: cf86c209d61e6884096ea2e2a3168f93, type: 2}
   title: {fileID: 7178402561754876000}
   sprite: {fileID: 7178402560330082782}
-  price: {fileID: 7178402561597142749}
-  buyButton: {fileID: 7178402561748508999}
-  selectButton: {fileID: 6132934728057815192}
+  priceText: {fileID: 7178402561597142749}
+  canBuy: 0
+  buyButton: {fileID: 7178402561748508997}
+  _selectButton: {fileID: 6132934728057815192}
+  _playerCloth: {fileID: 11400000, guid: 0a666da51bad7bf44a474872a6daf507, type: 2}
 --- !u!1 &7178402561597142751
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,7 +925,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 21300000, guid: d6a1673a31851fd4395c287261da36e4, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: d6a1673a31851fd4395c287261da36e4, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -920,7 +936,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7178402561748508996}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8756273412124778807}
+        m_TargetAssemblyTypeName: UseItemUI, Script
+        m_MethodName: BuyItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5426953707569169068
 MonoBehaviour:
   m_ObjectHideFlags: 0
