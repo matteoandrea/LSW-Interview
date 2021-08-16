@@ -5,15 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerControl", menuName = "Player/Player Control", order = 0)]
 public class PlayerControl : ScriptableObject
 {
-    [Header("Movement")]
-    public bool canMove;
-    public bool isMoving;
-    public Vector2 moveTarget;
+    public bool isMoving { get; set; }
+    public bool canMove { get; private set; }
 
-    [Space(10)]
+    public Vector2 moveTarget { get; set; }
 
-    [Header("Interacion")]
-    public bool canInteract;
+    public bool canInteract { get; private set; }
 
     public void Inicialization()
     {
@@ -21,5 +18,17 @@ public class PlayerControl : ScriptableObject
         isMoving = false;
 
         canInteract = true;
+    }
+
+    public void EnablePlayer()
+    {
+        canMove = true;
+        canInteract = true;
+    }
+
+    public void DisablePlayer()
+    {
+        canMove = false;
+        canInteract = false;
     }
 }
