@@ -14,39 +14,20 @@ public abstract class ShopItemUI : MonoBehaviour
     public Image sprite;
     public TMP_Text priceText;
 
-    public bool canBuy;
+    public bool canBuy = false;
 
     public Button buyButton;
 
-    private void OnEnable()
-    {
-        playerCurrency.UpdateCurrencyEvent += CheckPrice;
-    }
-
-    private void Start()
+    public virtual void Start()
     {
         title.text = shopItem.title;
         sprite.sprite = shopItem.sprite;
         priceText.text = shopItem.price.ToString();
-
-        CheckPrice(playerCurrency.Money);
     }
 
-    private void CheckPrice(float currency)
-    {
-        if (currency >= shopItem.price) canBuy = true;
-        else canBuy = false;
-
-        buyButton.interactable = canBuy;
-    }
-
-    public virtual void BuyItem()
+    public virtual void OnBuyItem()
     {
         if (!canBuy) return;
-
-        playerCurrency.Money = -shopItem.price;
-        buyButton.interactable = false;
-        playerCurrency.UpdateCurrencyEvent -= CheckPrice;
     }
 
     public virtual void SellItem()
