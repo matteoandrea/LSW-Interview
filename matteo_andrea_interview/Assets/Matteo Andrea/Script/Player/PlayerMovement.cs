@@ -22,7 +22,7 @@ public class PlayerMovement
 
         NavMeshHit hit;
 
-        if (NavMesh.SamplePosition(goTo, out hit, 1.0f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(goTo, out hit,.25f, NavMesh.AllAreas))
         {
             _playerControl.moveTarget = hit.position;
             _agent.SetDestination(_playerControl.moveTarget);
