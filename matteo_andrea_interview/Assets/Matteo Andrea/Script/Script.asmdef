@@ -5,7 +5,9 @@
         "Unity.InputSystem",
         "Cinemachine",
         "Unity.TextMeshPro",
-        "UniTask"
+        "UniTask",
+        "DOTween.Modules",
+        "UniTask.DOTween"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
