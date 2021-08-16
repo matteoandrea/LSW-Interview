@@ -11,6 +11,7 @@ public class InputReader : ScriptableObject, InputControl.IGameplayActions
 
     public event UnityAction<Vector2> MoveEvent = delegate { };
     public event UnityAction ClickEvent = delegate { };
+    public event UnityAction PauseEvent = delegate { };
 
 
     private void OnEnable()
@@ -41,7 +42,12 @@ public class InputReader : ScriptableObject, InputControl.IGameplayActions
 
     public void OnPause(InputAction.CallbackContext context)
     {
-
+        switch (context.phase)
+        {
+            case InputActionPhase.Performed:
+                PauseEvent.Invoke();
+                break;
+        }
     }
 }
 
