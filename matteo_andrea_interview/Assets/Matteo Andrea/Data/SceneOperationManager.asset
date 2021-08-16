@@ -18,6 +18,12 @@ MonoBehaviour:
   - unloadScenes: []
     loadScenes:
     - scene:
+        name: Menu
+        path: Assets/Matteo Andrea/Scenes/Menu/Menu.unity
+      sceneLoadType: 0
+  - unloadScenes: []
+    loadScenes:
+    - scene:
         name: Game
         path: Assets/Matteo Andrea/Scenes/Game/Game.unity
       sceneLoadType: 0

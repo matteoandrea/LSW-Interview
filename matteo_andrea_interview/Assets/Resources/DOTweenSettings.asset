@@ -26,7 +26,7 @@ MonoBehaviour:
   defaultRecyclable: 0
   defaultAutoPlay: 3
   defaultUpdateType: 0
-  defaultTimeScaleIndependent: 0
+  defaultTimeScaleIndependent: 1
   defaultEaseType: 6
   defaultEaseOvershootOrAmplitude: 1.70158
   defaultEasePeriod: 0
@@ -48,6 +48,6 @@ MonoBehaviour:
     deAudioEnabled: 0
     deUnityExtendedEnabled: 0
     epoOutlineEnabled: 0
-  createASMDEF: 0
+  createASMDEF: 1
   showPlayingTweens: 0
   showPausedTweens: 0
