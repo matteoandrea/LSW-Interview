@@ -11,7 +11,7 @@ public class InputReader : ScriptableObject, InputControl.IGameplayActions
 
     public event UnityAction<Vector2> MoveEvent = delegate { };
     public event UnityAction ClickEvent = delegate { };
-    
+
 
     private void OnEnable()
     {
@@ -24,7 +24,7 @@ public class InputReader : ScriptableObject, InputControl.IGameplayActions
         }
     }
 
-  
+
 
     public void OnClick(InputAction.CallbackContext context)
     {
@@ -38,5 +38,10 @@ public class InputReader : ScriptableObject, InputControl.IGameplayActions
     }
 
     public void OnMove(InputAction.CallbackContext context) => MoveEvent.Invoke(context.ReadValue<Vector2>());
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+
+    }
 }
 

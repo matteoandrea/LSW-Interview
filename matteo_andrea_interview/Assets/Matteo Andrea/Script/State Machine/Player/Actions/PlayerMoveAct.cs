@@ -14,6 +14,11 @@ public class PlayerMoveAct : Action
     private NavMeshAgent _agent;
     private PlayerAnimations _animations;
     private PlayerInteract _interact;
+    private AudioSource _audioSource;
+
+    [Space(10)]
+
+    [SerializeField] private AudioClip _clip;
 
     public override void ActAwake(StateMachine stateMachine)
     {
@@ -21,11 +26,16 @@ public class PlayerMoveAct : Action
         stateData.GetData<NavMeshAgent>(_keys.navAgent, out _agent);
         stateData.GetData<PlayerAnimations>(_keys.animations, out _animations);
         stateData.GetData<PlayerInteract>(_keys.interact, out _interact);
+        stateData.GetData<AudioSource>(_keys.audioSource, out _audioSource);
     }
 
     public override void ActEnter(StateMachine stateMachine)
     {
         _animations.SetBool(_animations.isMoving, true);
+
+        _audioSource.loop = true;
+        _audioSource.clip = _clip;
+        _audioSource.Play();
     }
 
     public override void ActUpdate(StateMachine stateMachine)
@@ -38,6 +48,12 @@ public class PlayerMoveAct : Action
 
             if (_interact.currentInteract != null) _interact.currentInteract.Interact();
         }
+    }
+
+    public override void ActExit(StateMachine stateMachine)
+    {
+        _audioSource.Stop();
+        _audioSource.loop = false;
     }
 
     private void ControlAnimation()
