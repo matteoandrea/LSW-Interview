@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 5628018141983903107}
   - component: {fileID: 2832997080526158551}
   - component: {fileID: 4616719885696106401}
-  - component: {fileID: 4272549392203701546}
   m_Layer: 20
   m_Name: PF Player
   m_TagString: Player
@@ -209,17 +208,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4272549392203701546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5628018141983903104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 047241486b1f70542bbd8668a48c78b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  target: {fileID: 0}
